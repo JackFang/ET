@@ -1,0 +1,21 @@
+{
+    "name": "Client.ModelView",
+    "rootNamespace": "ET",
+    "references": [
+        "Client.Model",
+        "Unity.Mono",
+        "Share.ThirdParty",
+        "Share.Core"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

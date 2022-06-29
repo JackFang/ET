@@ -1,0 +1,19 @@
+{
+    "name": "Server.Model",
+    "rootNamespace": "ET",
+    "references": [
+        "Share.ThirdParty",
+        "Share.Core"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

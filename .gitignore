@@ -66,3 +66,11 @@ Server/.DS_Store
 
 /Unity/ProjectSettings/RiderScriptEditorPersistedState.asset
 /Unity/Unity.Core.csproj
+/Unity/Client.Hotfix.csproj
+/Unity/Client.HotfixView.csproj
+/Unity/Client.Model.csproj
+/Unity/Client.ModelView.csproj
+/Unity/Server.Hotfix.csproj
+/Unity/Server.Model.csproj
+/Unity/Share.Core.csproj
+/Unity/Share.ThirdParty.csproj

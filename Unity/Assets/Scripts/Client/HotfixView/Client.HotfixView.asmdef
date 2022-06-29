@@ -1,0 +1,23 @@
+{
+    "name": "Client.HotfixView",
+    "rootNamespace": "ET",
+    "references": [
+        "Unity.Mono",
+        "Share.ThirdParty",
+        "Client.Model",
+        "Client.Hotfix",
+        "Client.ModelView",
+        "Share.Core"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

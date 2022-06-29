@@ -1,0 +1,20 @@
+{
+    "name": "Server.Hotfix",
+    "rootNamespace": "ET",
+    "references": [
+        "Server.Model",
+        "Share.ThirdParty",
+        "Share.Core"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

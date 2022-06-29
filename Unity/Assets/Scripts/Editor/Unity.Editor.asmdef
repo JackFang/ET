@@ -1,0 +1,20 @@
+{
+    "name": "Unity.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Unity.Mono",
+        "Share.Core",
+        "Share.ThirdParty"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
