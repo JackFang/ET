@@ -14,43 +14,43 @@ namespace ET
             
             if (path.EndsWith("Client.Hotfix.csproj"))
             {
-                content =  content.Replace("<Compile Include=\"Assets\\Client\\Hotfix\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Client\\Hotfix\\Client.Hotfix.asmdef\" />", string.Empty);
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Client\\Hotfix\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Client\\Hotfix\\Client.Hotfix.asmdef\" />", string.Empty);
             }
             
             if (path.EndsWith("Client.HotfixView.csproj"))
             {
-                content =  content.Replace("<Compile Include=\"Assets\\Client\\HotfixView\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Client\\HotfixView\\Client.HotfixView.asmdef\" />", string.Empty);
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Client\\HotfixView\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Client\\HotfixView\\Client.HotfixView.asmdef\" />", string.Empty);
             }
             
             if (path.EndsWith("Client.Model.csproj"))
             {
-                content =  content.Replace("<Compile Include=\"Assets\\Client\\Model\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Client\\Model\\Client.Model.asmdef\" />", string.Empty);
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Client\\Model\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Client\\Model\\Client.Model.asmdef\" />", string.Empty);
             }
             
             if (path.EndsWith("Client.ModelView.csproj"))
             {
-                content =  content.Replace("<Compile Include=\"Assets\\ModelView\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Client\\ModelView\\Client.ModelView.asmdef\" />", string.Empty);
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Client\\ModelView\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Client\\ModelView\\Client.ModelView.asmdef\" />", string.Empty);
             }
             
             if (path.EndsWith("Server.Hotfix.csproj"))
             {
-                content =  content.Replace("<Compile Include=\"Assets\\Server\\Hotfix\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Server\\Hotfix\\Server.Hotfix.asmdef\" />", string.Empty);
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Server\\Hotfix\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Server\\Hotfix\\Server.Hotfix.asmdef\" />", string.Empty);
             }
             
             if (path.EndsWith("Server.Model.csproj"))
             {
-                content =  content.Replace("<Compile Include=\"Assets\\Server\\Model\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Server\\Model\\Server.Model.asmdef\" />", string.Empty);
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Server\\Model\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Server\\Model\\Server.Model.asmdef\" />", string.Empty);
             }
             
             if (path.EndsWith("Client.Hotfix.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Client\Hotfix\**\*.cs");
+                return GenerateCustomProject(path, content, @"Client\Hotfix\**\*.cs", @"Share\Hotfix\**\*.cs");
             }
 
             if (path.EndsWith("Client.HotfixView.csproj"))
@@ -60,7 +60,7 @@ namespace ET
 
             if (path.EndsWith("Client.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Client\Model\**\*.cs");
+                return GenerateCustomProject(path, content, @"Client\Model\**\*.cs", @"Share\Model\**\*.cs");
             }
 
             if (path.EndsWith("Client.ModelView.csproj"))
@@ -70,12 +70,12 @@ namespace ET
             
             if (path.EndsWith("Server.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Server\Model\**\*.cs", @"Client\Model\**\*.cs");
+                return GenerateCustomProject(path, content, @"Server\Model\**\*.cs", @"Share\Model\**\*.cs");
             }
             
             if (path.EndsWith("Server.Hotfix.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Server\Hotfix\**\*.cs", @"Client\Hotfix\**\*.cs");
+                return GenerateCustomProject(path, content, @"Server\Hotfix\**\*.cs", @"Share\Hotfix\**\*.cs");
             }
             
             return content;
