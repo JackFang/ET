@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !UNITY
+using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using MongoDB.Driver;
@@ -250,3 +251,4 @@ namespace ET
 	    #endregion
     }
 }
+#endif

@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !UNITY
+using System;
 
 namespace ET
 {
@@ -43,3 +44,4 @@ namespace ET
         }
     }
 }
+#endif

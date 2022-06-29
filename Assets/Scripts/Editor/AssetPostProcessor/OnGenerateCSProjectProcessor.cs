@@ -70,12 +70,12 @@ namespace ET
             
             if (path.EndsWith("Server.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Server\Model\**\*.cs", @"Share\Model\**\*.cs");
+                return GenerateCustomProject(path, content, @"Server\Model\**\*.cs", @"Client\Model\**\*.cs", @"Share\Model\**\*.cs");
             }
             
             if (path.EndsWith("Server.Hotfix.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Server\Hotfix\**\*.cs", @"Share\Hotfix\**\*.cs");
+                return GenerateCustomProject(path, content, @"Server\Hotfix\**\*.cs", @"Client\Hotfix\**\*.cs", @"Share\Hotfix\**\*.cs");
             }
             
             return content;

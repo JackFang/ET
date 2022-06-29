@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿#if !UNITY
+using System.IO;
 using System.Reflection;
 using System.Runtime.Loader;
 
@@ -20,3 +21,4 @@ namespace ET
         }
     }
 }
+#endif

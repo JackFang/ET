@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿#if !UNITY
+using MongoDB.Driver;
 
 namespace ET
 {
@@ -13,3 +14,4 @@ namespace ET
         public IMongoDatabase database;
     }
 }
+#endif
