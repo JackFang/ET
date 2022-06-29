@@ -1,6 +1,6 @@
 using System;
 using System.Net;
-
+/*
 namespace ET
 {
     [Event(SceneType.Process)]
@@ -76,3 +76,4 @@ namespace ET
         }
     }
 }
+*/
