@@ -1,4 +1,4 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [FriendOf(typeof(RouterNode))]
     public static class RouterNodeSystem

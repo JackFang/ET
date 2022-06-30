@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ET
+namespace ET.Server
 {
     [FriendOf(typeof(AOIManagerComponent))]
     [FriendOf(typeof(AOIEntity))]

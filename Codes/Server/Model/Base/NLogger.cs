@@ -1,6 +1,6 @@
 ﻿using NLog;
 
-namespace ET
+namespace ET.Server
 {
     public class NLogger: ILog
     {

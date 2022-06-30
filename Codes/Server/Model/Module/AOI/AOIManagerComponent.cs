@@ -1,4 +1,4 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [ChildType(typeof(Cell))]
     [ComponentOf(typeof(Scene))]

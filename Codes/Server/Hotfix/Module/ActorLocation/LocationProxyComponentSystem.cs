@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ET
+namespace ET.Server
 {
     [ObjectSystem]
     public class LocationProxyComponentAwakeSystem: AwakeSystem<LocationProxyComponent>

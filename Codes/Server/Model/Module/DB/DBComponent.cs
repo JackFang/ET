@@ -1,7 +1,7 @@
 ﻿#if !UNITY
 using MongoDB.Driver;
 
-namespace ET
+namespace ET.Server
 {
     /// <summary>
     /// 用来缓存数据

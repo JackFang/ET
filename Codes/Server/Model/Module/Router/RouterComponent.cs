@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 
-namespace ET
+namespace ET.Server
 {
     [ChildType(typeof(RouterNode))]
     [ComponentOf(typeof(Scene))]

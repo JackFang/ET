@@ -1,4 +1,4 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [ObjectSystem]
     public class ModeContexAwakeSystem: AwakeSystem<ModeContex>

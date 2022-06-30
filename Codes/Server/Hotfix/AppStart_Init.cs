@@ -1,7 +1,7 @@
 using System;
 using System.Net;
 /*
-namespace ET
+namespace ET.Server
 {
     [Event(SceneType.Process)]
     public class AppStart_Init: AEvent<Scene, EventType.AppStart>

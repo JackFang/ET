@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Net;
 
-namespace ET
+namespace ET.Server
 {
     public struct ProcessActorId
     {

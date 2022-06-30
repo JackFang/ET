@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.Loader;
 
-namespace ET
+namespace ET.Server
 {
     public static class DllHelper
     {

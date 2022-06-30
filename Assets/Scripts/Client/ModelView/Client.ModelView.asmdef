@@ -1,6 +1,6 @@
 {
     "name": "Client.ModelView",
-    "rootNamespace": "ET",
+    "rootNamespace": "ET.Client",
     "references": [
         "Client.Model",
         "Unity.Mono",

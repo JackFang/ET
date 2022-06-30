@@ -1,4 +1,4 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     public class ConsoleHandlerAttribute: BaseAttribute
     {

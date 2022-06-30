@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ET
+namespace ET.Server
 {
     [ConsoleHandler(ConsoleMode.ReloadDll)]
     public class ReloadDllConsoleHandler: IConsoleHandler

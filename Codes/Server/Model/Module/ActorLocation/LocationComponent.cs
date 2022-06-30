@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ET
+namespace ET.Server
 {
     public class LockInfo: Entity, IAwake<long, CoroutineLock>, IDestroy
     {

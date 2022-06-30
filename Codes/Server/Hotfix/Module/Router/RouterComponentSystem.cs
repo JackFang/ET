@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
 
-namespace ET
+namespace ET.Server
 {
     [FriendOf(typeof (RouterComponent))]
     [FriendOf(typeof (RouterNode))]

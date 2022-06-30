@@ -1,4 +1,4 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
 	namespace EventType
 	{

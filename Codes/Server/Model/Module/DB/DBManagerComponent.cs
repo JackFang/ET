@@ -1,5 +1,5 @@
 ﻿#if !UNITY
-namespace ET
+namespace ET.Server
 {
     [ChildType(typeof(DBComponent))]
     public class DBManagerComponent: Entity, IAwake, IDestroy

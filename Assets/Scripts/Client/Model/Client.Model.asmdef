@@ -1,6 +1,6 @@
 {
     "name": "Client.Model",
-    "rootNamespace": "ET",
+    "rootNamespace": "ET.Client",
     "references": [
         "Unity.ThirdParty",
         "Unity.Mono",

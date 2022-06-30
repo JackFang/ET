@@ -1,6 +1,6 @@
 using System;
 
-namespace ET
+namespace ET.Server
 {
     [ObjectSystem]
     public class ActorLocationSenderAwakeSystem: AwakeSystem<ActorLocationSender>

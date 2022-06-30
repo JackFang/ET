@@ -1,6 +1,6 @@
 {
     "name": "Server.Hotfix",
-    "rootNamespace": "ET",
+    "rootNamespace": "ET.Server",
     "references": [
         "Server.Model",
         "Unity.ThirdParty",

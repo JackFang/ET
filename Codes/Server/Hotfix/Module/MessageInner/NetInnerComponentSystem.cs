@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Net;
 
-namespace ET
+namespace ET.Server
 {
     [FriendOf(typeof(NetInnerComponent))]
     [FriendOf(typeof(NetThreadComponent))]

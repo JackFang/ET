@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 
-namespace ET
+namespace ET.Server
 {
     [FriendOf(typeof(HttpComponent))]
     public static class HttpComponentSystem

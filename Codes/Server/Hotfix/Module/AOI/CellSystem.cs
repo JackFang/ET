@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace ET
+namespace ET.Server
 {
     [FriendOf(typeof(Cell))]
     public static class CellSystem

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 
-namespace ET
+namespace ET.Server
 {
     /// <summary>
     /// http请求分发器

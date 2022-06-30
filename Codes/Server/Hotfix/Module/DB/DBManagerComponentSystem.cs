@@ -1,7 +1,7 @@
 ﻿#if !UNITY
 using System;
 
-namespace ET
+namespace ET.Server
 {
     [FriendOf(typeof(DBManagerComponent))]
     public static class DBManagerComponentSystem

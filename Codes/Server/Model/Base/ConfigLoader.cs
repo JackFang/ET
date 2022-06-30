@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace ET
+namespace ET.Server
 {
     [Callback(CallbackType.GetAllConfigBytes)]
     public class GetAllConfigBytes: IAction<Dictionary<string, byte[]>>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using MongoDB.Driver;
 
-namespace ET
+namespace ET.Server
 {
 	[FriendOf(typeof(DBComponent))]
     public static class DBComponentSystem

@@ -1,6 +1,6 @@
 using System.Net;
 
-namespace ET
+namespace ET.Server
 {
     public interface IHttpHandler
     {

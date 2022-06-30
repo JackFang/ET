@@ -1,6 +1,6 @@
 using System;
 
-namespace ET
+namespace ET.Server
 {
     public abstract class AMRpcHandler<Request, Response>: IMHandler where Request : class, IRequest where Response : class, IResponse
     {

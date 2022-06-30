@@ -1,4 +1,4 @@
-﻿namespace ET
+﻿namespace ET.Server
 {
     [ObjectSystem]
     public class LockInfoAwakeSystem: AwakeSystem<LockInfo, long, CoroutineLock>

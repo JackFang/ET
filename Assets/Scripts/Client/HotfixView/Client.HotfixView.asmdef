@@ -1,6 +1,6 @@
 {
     "name": "Client.HotfixView",
-    "rootNamespace": "ET",
+    "rootNamespace": "ET.Client",
     "references": [
         "Unity.Mono",
         "Unity.ThirdParty",

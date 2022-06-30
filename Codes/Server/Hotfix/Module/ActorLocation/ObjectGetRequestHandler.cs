@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ET
+namespace ET.Server
 {
     [ActorMessageHandler(SceneType.Location)]
     public class ObjectGetRequestHandler: AMActorRpcHandler<Scene, ObjectGetRequest, ObjectGetResponse>

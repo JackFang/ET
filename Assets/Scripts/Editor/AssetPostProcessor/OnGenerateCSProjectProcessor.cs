@@ -11,7 +11,6 @@ namespace ET
     {
         public static string OnGeneratedCSProject(string path, string content)
         {
-            
             if (path.EndsWith("Client.Hotfix.csproj"))
             {
                 content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Client\\Hotfix\\Empty.cs\" />", string.Empty);
@@ -60,68 +59,45 @@ namespace ET
                 content =  content.Replace("<None Include=\"Assets\\Scripts\\Share\\Model\\Share.Model.asmdef\" />", string.Empty);
             }
             
-            if (path.EndsWith("Robot.Hotfix.csproj"))
-            {
-                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Robot\\Hotfix\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Scripts\\Robot\\Hotfix\\Robot.Hotfix.asmdef\" />", string.Empty);
-            }
-            
-            if (path.EndsWith("Robot.Model.csproj"))
-            {
-                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Robot\\Model\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Scripts\\Robot\\Model\\Robot.Model.asmdef\" />", string.Empty);
-            }
-            
             if (path.EndsWith("Client.Hotfix.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\\Client\Hotfix\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\Client\Hotfix\**\*.cs");
             }
 
             if (path.EndsWith("Client.HotfixView.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\\Client\HotfixView\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\Client\HotfixView\**\*.cs");
             }
 
             if (path.EndsWith("Client.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\\Client\Model\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\Client\Model\**\*.cs");
             }
 
             if (path.EndsWith("Client.ModelView.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\\Client\ModelView\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\Client\ModelView\**\*.cs");
             }
             
             if (path.EndsWith("Server.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\\Server\Model\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\Server\Model\**\*.cs");
             }
             
             if (path.EndsWith("Server.Hotfix.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\\Server\Hotfix\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\Server\Hotfix\**\*.cs");
             }
             
             if (path.EndsWith("Share.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\\Share\Model\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\Share\Model\**\*.cs");
             }
             
             if (path.EndsWith("Share.Hotfix.csproj"))
             {
                 return GenerateCustomProject(path, content, @"Codes\\Share\Hotfix\**\*.cs");
             }
-            
-            if (path.EndsWith("Robot.Model.csproj"))
-            {
-                return GenerateCustomProject(path, content, @"Codes\\Robot\Model\**\*.cs");
-            }
-            
-            if (path.EndsWith("Robot.Hotfix.csproj"))
-            {
-                return GenerateCustomProject(path, content, @"Codes\\Robot\Hotfix\**\*.cs");
-            }
-            
             return content;
         }
 
@@ -134,15 +110,16 @@ namespace ET
 
             var rootNode = newDoc.GetElementsByTagName("Project")[0];
 
-            var itemGroup = newDoc.CreateElement("ItemGroup", newDoc.DocumentElement.NamespaceURI);
-            foreach (string s in codesPath)
+            XmlElement itemGroup = newDoc.CreateElement("ItemGroup", newDoc.DocumentElement.NamespaceURI);
+            foreach (var s in codesPath)
             {
-                var compile = newDoc.CreateElement("Compile", newDoc.DocumentElement.NamespaceURI);
+                XmlElement compile = newDoc.CreateElement("Compile", newDoc.DocumentElement.NamespaceURI);
+                //XmlElement link = newDoc.CreateElement("Link", newDoc.DocumentElement.NamespaceURI);
+                //link.InnerText = $"{linkStr}\\%(RecursiveDir)%(FileName)%(Extension)";
+                //compile.AppendChild(link);
                 compile.SetAttribute("Include", s);
                 itemGroup.AppendChild(compile);
             }
-
-            
 
             var projectReference = newDoc.CreateElement("ProjectReference", newDoc.DocumentElement.NamespaceURI);
             projectReference.SetAttribute("Include", @"..\Share\Analyzer\Share.Analyzer.csproj");

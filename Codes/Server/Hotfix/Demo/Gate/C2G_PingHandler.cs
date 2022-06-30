@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace ET
+namespace ET.Server
 {
 	[MessageHandler(SceneType.Gate)]
 	public class C2G_PingHandler : AMRpcHandler<C2G_Ping, G2C_Ping>

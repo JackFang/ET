@@ -1,6 +1,6 @@
 {
     "name": "Server.Model",
-    "rootNamespace": "ET",
+    "rootNamespace": "ET.Server",
     "references": [
         "Unity.ThirdParty",
         "Unity.Core",

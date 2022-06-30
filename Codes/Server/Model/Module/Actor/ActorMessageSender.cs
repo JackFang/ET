@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace ET
+namespace ET.Server
 {
     // 知道对方的instanceId，使用这个类发actor消息
     public readonly struct ActorMessageSender
