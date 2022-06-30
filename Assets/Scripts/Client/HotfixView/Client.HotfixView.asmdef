@@ -7,7 +7,7 @@
         "Client.Model",
         "Client.Hotfix",
         "Client.ModelView",
-        "Share.Core"
+        "Unity.Core"
     ],
     "includePlatforms": [
         "Editor"

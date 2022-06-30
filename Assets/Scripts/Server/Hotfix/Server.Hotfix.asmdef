@@ -4,7 +4,7 @@
     "references": [
         "Server.Model",
         "Share.ThirdParty",
-        "Share.Core"
+        "Unity.Core"
     ],
     "includePlatforms": [
         "Editor"

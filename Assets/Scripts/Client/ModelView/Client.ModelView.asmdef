@@ -5,7 +5,7 @@
         "Client.Model",
         "Unity.Mono",
         "Share.ThirdParty",
-        "Share.Core"
+        "Unity.Core"
     ],
     "includePlatforms": [
         "Editor"

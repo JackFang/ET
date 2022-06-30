@@ -2,8 +2,8 @@
     "name": "Unity.Mono",
     "rootNamespace": "ET",
     "references": [
-        "Share.Core",
-        "Share.ThirdParty"
+        "Share.ThirdParty",
+        "Unity.Core"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -15,6 +15,8 @@ namespace ET
 		public Action OnApplicationQuit;
 
 		private Assembly assembly;
+
+		private Dictionary<string, Type> types;
 		
 		public CodeMode CodeMode { get; set; }
 
@@ -39,8 +41,7 @@ namespace ET
 					assembly = Assembly.Load(assBytes, pdbBytes);
 
 
-					Dictionary<string, Type> types = AssemblyHelper.GetAssemblyTypes(typeof (Game).Assembly, this.assembly);
-					Game.EventSystem.Add(types);
+					types = AssemblyHelper.GetAssemblyTypes(this.assembly);
 					
 					IStaticMethod start = new MonoStaticMethod(assembly, "ET.Client.Entry", "Start");
 					start.Run();
@@ -83,9 +84,12 @@ namespace ET
 
 			Assembly hotfixAssembly = Assembly.Load(assBytes, pdbBytes);
 			
-			Dictionary<string, Type> types = AssemblyHelper.GetAssemblyTypes(typeof (Game).Assembly, this.assembly, hotfixAssembly);
-			
-			Game.EventSystem.Add(types);
+			types = AssemblyHelper.GetAssemblyTypes(this.assembly, hotfixAssembly);
+		}
+
+		public Dictionary<string, Type> GetTypes()
+		{
+			return this.types;
 		}
 	}
 }

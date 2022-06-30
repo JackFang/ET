@@ -1,5 +1,5 @@
 {
-    "name": "Share.Core",
+    "name": "Unity.Core",
     "rootNamespace": "ET",
     "references": [
         "Share.ThirdParty"

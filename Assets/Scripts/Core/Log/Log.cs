@@ -10,6 +10,8 @@ namespace ET
         private const int InfoLevel = 3;
         private const int WarningLevel = 4;
 
+        public static ILog ILog;
+
         private static bool CheckLogLevel(int level)
         {
             if (Options.Instance == null)
@@ -26,7 +28,7 @@ namespace ET
                 return;
             }
             StackTrace st = new StackTrace(1, true);
-            Game.ILog.Trace($"{msg}\n{st}");
+            ILog.Trace($"{msg}\n{st}");
         }
 
         public static void Debug(string msg)
@@ -35,7 +37,7 @@ namespace ET
             {
                 return;
             }
-            Game.ILog.Debug(msg);
+            ILog.Debug(msg);
         }
 
         public static void Info(string msg)
@@ -44,7 +46,7 @@ namespace ET
             {
                 return;
             }
-            Game.ILog.Info(msg);
+            ILog.Info(msg);
         }
 
         public static void TraceInfo(string msg)
@@ -54,7 +56,7 @@ namespace ET
                 return;
             }
             StackTrace st = new StackTrace(1, true);
-            Game.ILog.Trace($"{msg}\n{st}");
+            ILog.Trace($"{msg}\n{st}");
         }
 
         public static void Warning(string msg)
@@ -64,24 +66,24 @@ namespace ET
                 return;
             }
 
-            Game.ILog.Warning(msg);
+            ILog.Warning(msg);
         }
 
         public static void Error(string msg)
         {
             StackTrace st = new StackTrace(1, true);
-            Game.ILog.Error($"{msg}\n{st}");
+            ILog.Error($"{msg}\n{st}");
         }
 
         public static void Error(Exception e)
         {
             if (e.Data.Contains("StackTrace"))
             {
-                Game.ILog.Error($"{e.Data["StackTrace"]}\n{e}");
+                ILog.Error($"{e.Data["StackTrace"]}\n{e}");
                 return;
             }
             string str = e.ToString();
-            Game.ILog.Error(str);
+            ILog.Error(str);
         }
 
         public static void Trace(string message, params object[] args)
@@ -91,7 +93,7 @@ namespace ET
                 return;
             }
             StackTrace st = new StackTrace(1, true);
-            Game.ILog.Trace($"{string.Format(message, args)}\n{st}");
+            ILog.Trace($"{string.Format(message, args)}\n{st}");
         }
 
         public static void Warning(string message, params object[] args)
@@ -100,7 +102,7 @@ namespace ET
             {
                 return;
             }
-            Game.ILog.Warning(string.Format(message, args));
+            ILog.Warning(string.Format(message, args));
         }
 
         public static void Info(string message, params object[] args)
@@ -109,7 +111,7 @@ namespace ET
             {
                 return;
             }
-            Game.ILog.Info(string.Format(message, args));
+            ILog.Info(string.Format(message, args));
         }
 
         public static void Debug(string message, params object[] args)
@@ -118,15 +120,14 @@ namespace ET
             {
                 return;
             }
-            Game.ILog.Debug(string.Format(message, args));
-
+            ILog.Debug(string.Format(message, args));
         }
 
         public static void Error(string message, params object[] args)
         {
             StackTrace st = new StackTrace(1, true);
             string s = string.Format(message, args) + '\n' + st;
-            Game.ILog.Error(s);
+            ILog.Error(s);
         }
         
         public static void Console(string message)
@@ -135,7 +136,7 @@ namespace ET
             {
                 System.Console.WriteLine(message);
             }
-            Game.ILog.Debug(message);
+            ILog.Debug(message);
         }
         
         public static void Console(string message, params object[] args)
@@ -145,7 +146,7 @@ namespace ET
             {
                 System.Console.WriteLine(s);
             }
-            Game.ILog.Debug(s);
+            ILog.Debug(s);
         }
     }
 }

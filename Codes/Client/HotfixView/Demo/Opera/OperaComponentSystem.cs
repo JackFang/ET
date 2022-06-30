@@ -43,6 +43,7 @@ namespace ET.Client
             if (Input.GetKeyDown(KeyCode.R))
             {
                 CodeLoader.Instance.LoadLogic();
+                Game.EventSystem.Add(CodeLoader.Instance.GetTypes());
                 Game.EventSystem.Load();
                 Log.Debug("hot reload success!");
             }
