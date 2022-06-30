@@ -50,32 +50,32 @@ namespace ET
             
             if (path.EndsWith("Client.Hotfix.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Client\Hotfix\**\*.cs", @"Share\Hotfix\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\\Client\Hotfix\**\*.cs", @"Codes\\Share\Hotfix\**\*.cs");
             }
 
             if (path.EndsWith("Client.HotfixView.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Client\HotfixView\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\\Client\HotfixView\**\*.cs");
             }
 
             if (path.EndsWith("Client.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Client\Model\**\*.cs", @"Share\Model\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\\Client\Model\**\*.cs", @"Codes\\Share\Model\**\*.cs");
             }
 
             if (path.EndsWith("Client.ModelView.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Client\ModelView\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\\Client\ModelView\**\*.cs");
             }
             
             if (path.EndsWith("Server.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Server\Model\**\*.cs", @"Client\Model\**\*.cs", @"Share\Model\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\\Server\Model\**\*.cs", @"Codes\\Client\Model\**\*.cs", @"Codes\\Share\Model\**\*.cs");
             }
             
             if (path.EndsWith("Server.Hotfix.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Server\Hotfix\**\*.cs", @"Client\Hotfix\**\*.cs", @"Share\Hotfix\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\\Server\Hotfix\**\*.cs", @"Codes\\Client\Hotfix\**\*.cs", @"Codes\\Share\Hotfix\**\*.cs");
             }
             
             return content;
