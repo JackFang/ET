@@ -1,14 +1,8 @@
 {
-    "name": "Unity.Editor",
+    "name": "Unity.ThirdParty",
     "rootNamespace": "",
-    "references": [
-        "Unity.Mono",
-        "Unity.ThirdParty",
-        "Unity.Core"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
     "overrideReferences": false,

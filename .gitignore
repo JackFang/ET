@@ -41,7 +41,8 @@ Client.Model.csproj
 Client.ModelView.csproj
 Server.Hotfix.csproj
 Server.Model.csproj
-Share.Core.csproj
-Share.ThirdParty.csproj
 /Unity.Editor.csproj
 /Unity.Mono.csproj
+/Share.Hotfix.csproj
+/Share.Model.csproj
+/Unity.ThirdParty.csproj

@@ -1,12 +1,9 @@
 {
-    "name": "Client.ModelView",
+    "name": "Share.Model",
     "rootNamespace": "ET",
     "references": [
-        "Client.Model",
-        "Unity.Mono",
         "Unity.ThirdParty",
-        "Unity.Core",
-        "Share.Model"
+        "Unity.Core"
     ],
     "includePlatforms": [
         "Editor"

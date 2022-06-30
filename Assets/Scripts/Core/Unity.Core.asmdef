@@ -2,7 +2,7 @@
     "name": "Unity.Core",
     "rootNamespace": "ET",
     "references": [
-        "Share.ThirdParty"
+        "Unity.ThirdParty"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

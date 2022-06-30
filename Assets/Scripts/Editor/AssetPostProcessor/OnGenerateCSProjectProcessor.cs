@@ -48,9 +48,33 @@ namespace ET
                 content =  content.Replace("<None Include=\"Assets\\Scripts\\Server\\Model\\Server.Model.asmdef\" />", string.Empty);
             }
             
+            if (path.EndsWith("Share.Hotfix.csproj"))
+            {
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Share\\Hotfix\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Share\\Hotfix\\Share.Hotfix.asmdef\" />", string.Empty);
+            }
+            
+            if (path.EndsWith("Share.Model.csproj"))
+            {
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Share\\Model\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Share\\Model\\Share.Model.asmdef\" />", string.Empty);
+            }
+            
+            if (path.EndsWith("Robot.Hotfix.csproj"))
+            {
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Robot\\Hotfix\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Robot\\Hotfix\\Robot.Hotfix.asmdef\" />", string.Empty);
+            }
+            
+            if (path.EndsWith("Robot.Model.csproj"))
+            {
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Robot\\Model\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Robot\\Model\\Robot.Model.asmdef\" />", string.Empty);
+            }
+            
             if (path.EndsWith("Client.Hotfix.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\\Client\Hotfix\**\*.cs", @"Codes\\Share\Hotfix\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\\Client\Hotfix\**\*.cs");
             }
 
             if (path.EndsWith("Client.HotfixView.csproj"))
@@ -60,7 +84,7 @@ namespace ET
 
             if (path.EndsWith("Client.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\\Client\Model\**\*.cs", @"Codes\\Share\Model\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\\Client\Model\**\*.cs");
             }
 
             if (path.EndsWith("Client.ModelView.csproj"))
@@ -70,12 +94,32 @@ namespace ET
             
             if (path.EndsWith("Server.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\\Server\Model\**\*.cs", @"Codes\\Client\Model\**\*.cs", @"Codes\\Share\Model\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\\Server\Model\**\*.cs");
             }
             
             if (path.EndsWith("Server.Hotfix.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\\Server\Hotfix\**\*.cs", @"Codes\\Client\Hotfix\**\*.cs", @"Codes\\Share\Hotfix\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\\Server\Hotfix\**\*.cs");
+            }
+            
+            if (path.EndsWith("Share.Model.csproj"))
+            {
+                return GenerateCustomProject(path, content, @"Codes\\Share\Model\**\*.cs");
+            }
+            
+            if (path.EndsWith("Share.Hotfix.csproj"))
+            {
+                return GenerateCustomProject(path, content, @"Codes\\Share\Hotfix\**\*.cs");
+            }
+            
+            if (path.EndsWith("Robot.Model.csproj"))
+            {
+                return GenerateCustomProject(path, content, @"Codes\\Robot\Model\**\*.cs");
+            }
+            
+            if (path.EndsWith("Robot.Hotfix.csproj"))
+            {
+                return GenerateCustomProject(path, content, @"Codes\\Robot\Hotfix\**\*.cs");
             }
             
             return content;

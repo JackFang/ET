@@ -3,8 +3,12 @@
     "rootNamespace": "ET",
     "references": [
         "Server.Model",
-        "Share.ThirdParty",
-        "Unity.Core"
+        "Unity.ThirdParty",
+        "Unity.Core",
+        "Share.Model",
+        "Share.Hotfix",
+        "Client.Hotfix",
+        "Client.Model"
     ],
     "includePlatforms": [
         "Editor"

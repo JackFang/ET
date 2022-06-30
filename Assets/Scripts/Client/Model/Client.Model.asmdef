@@ -2,9 +2,10 @@
     "name": "Client.Model",
     "rootNamespace": "ET",
     "references": [
-        "Share.ThirdParty",
+        "Unity.ThirdParty",
         "Unity.Mono",
-        "Unity.Core"
+        "Unity.Core",
+        "Share.Model"
     ],
     "includePlatforms": [
         "Editor"

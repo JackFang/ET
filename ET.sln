@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Core", "Unity.Core.csproj", "{960c6f28-a31c-97d3-77a4-fb6bc1c43811}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Share.ThirdParty", "Share.ThirdParty.csproj", "{25b61caf-a52d-475c-0e31-23323f9fb423}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.ThirdParty", "Unity.ThirdParty.csproj", "{f4a75b88-11e2-7273-6296-d7784b3f0854}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Mono", "Unity.Mono.csproj", "{daf4b4ae-1e17-8524-7608-d97079524b4d}"
 EndProject
@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Hotfix", "Client.Hot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Model", "Server.Model.csproj", "{19474958-d888-06ca-dde2-4e2acee129a1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Share.Model", "Share.Model.csproj", "{1f7644d8-51ef-9910-233d-002f0bffec8a}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Share.Hotfix", "Share.Hotfix.csproj", "{a288578f-7f8b-bef7-3593-0a215b41b26e}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{4f6d468a-4c43-8493-5f7f-0229248bdaf0}"
 EndProject
 Global
@@ -30,8 +34,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{960c6f28-a31c-97d3-77a4-fb6bc1c43811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{960c6f28-a31c-97d3-77a4-fb6bc1c43811}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25b61caf-a52d-475c-0e31-23323f9fb423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25b61caf-a52d-475c-0e31-23323f9fb423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f4a75b88-11e2-7273-6296-d7784b3f0854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f4a75b88-11e2-7273-6296-d7784b3f0854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{daf4b4ae-1e17-8524-7608-d97079524b4d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{daf4b4ae-1e17-8524-7608-d97079524b4d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5e9a8d27-f62a-3cce-523b-06233d420565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -48,6 +52,10 @@ Global
 		{001a8e26-3dad-fbeb-e3da-7c58c3a74cd6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19474958-d888-06ca-dde2-4e2acee129a1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19474958-d888-06ca-dde2-4e2acee129a1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1f7644d8-51ef-9910-233d-002f0bffec8a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1f7644d8-51ef-9910-233d-002f0bffec8a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a288578f-7f8b-bef7-3593-0a215b41b26e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a288578f-7f8b-bef7-3593-0a215b41b26e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4f6d468a-4c43-8493-5f7f-0229248bdaf0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4f6d468a-4c43-8493-5f7f-0229248bdaf0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection

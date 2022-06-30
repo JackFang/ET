@@ -1,8 +1,14 @@
 {
-    "name": "Share.ThirdParty",
-    "rootNamespace": "",
-    "references": [],
-    "includePlatforms": [],
+    "name": "Share.Hotfix",
+    "rootNamespace": "ET",
+    "references": [
+        "Unity.ThirdParty",
+        "Unity.Core",
+        "Share.Model"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
     "overrideReferences": false,
