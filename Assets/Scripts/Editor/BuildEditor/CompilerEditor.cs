@@ -9,87 +9,105 @@ using UnityEditor.Compilation;
 
 namespace ET
 {
-    public static class BuildAssemblieEditor
+    public class CompilerEditor : EditorWindow
     {
         private const string CodeDir = "Assets/Bundles/Code/";
 
-        [MenuItem("Tools/Build/EnableAutoBuildCodeDebug _F1")]
-        public static void SetAutoBuildCode()
-        {
-            PlayerPrefs.SetInt("AutoBuild", 1);
-            ShowNotification("AutoBuildCode Enabled");
-        }
+        private CodeOptimization codeOptimization;
+
+        private bool withServerCode;
         
-        [MenuItem("Tools/Build/DisableAutoBuildCodeDebug _F2")]
-        public static void CancelAutoBuildCode()
+        [MenuItem("ET/CompilerEditor")]
+        public static void ShowWindow()
         {
-            PlayerPrefs.DeleteKey("AutoBuild");
-            ShowNotification("AutoBuildCode Disabled");
+            GetWindow(typeof (CompilerEditor));
         }
 
-        [MenuItem("Tools/Build/BuildCodeDebug _F5")]
-        public static void BuildCodeDebug()
+        private void OnGUI()
         {
-            BuildAssemblieEditor.BuildMuteAssembly("Code", new []
-            {
-                "Codes/Model/",
-                "Codes/ModelView/",
-                "Codes/Hotfix/",
-                "Codes/HotfixView/"
-            }, Array.Empty<string>(), CodeOptimization.Debug);
-
-            AfterCompiling();
+            this.codeOptimization = (CodeOptimization)EditorGUILayout.EnumPopup("BuildType: ", this.codeOptimization);
             
-            AssetDatabase.Refresh();
-        }
-        
-        [MenuItem("Tools/Build/BuildCodeRelease _F6")]
-        public static void BuildCodeRelease()
-        {
-            BuildAssemblieEditor.BuildMuteAssembly("Code", new []
-            {
-                "Codes/Model/",
-                "Codes/ModelView/",
-                "Codes/Hotfix/",
-                "Codes/HotfixView/"
-            }, Array.Empty<string>(), CodeOptimization.Release);
+            this.withServerCode = EditorGUILayout.Toggle("WithServerCode: ", withServerCode);
 
-            AfterCompiling();
+            if (GUILayout.Button("Compile Code"))
+            {
+                List<string> codePath = new List<string>()
+                {
+                    "Codes/Client/Model/",
+                    "Codes/Client/ModelView/",
+                    "Codes/Client/Hotfix/",
+                    "Codes/Client/HotfixView/",
+                    "Codes/Share/Hotfix/",
+                    "Codes/Share/Model/",
+                };
+
+                if (this.withServerCode)
+                {
+                    codePath.AddRange(new List<string>()
+                    {
+                        "Codes/Server/Hotfix/",
+                        "Codes/Server/Model/",
+                    });
+                }
+                
+                Compile("Code", codePath.ToArray(), Array.Empty<string>(), codeOptimization);
+
+                AfterCompiling();
             
-            AssetDatabase.Refresh();
-        }
-        
-        [MenuItem("Tools/Build/BuildData _F7")]
-        public static void BuildData()
-        {
-            BuildAssemblieEditor.BuildMuteAssembly("Data", new []
-            {
-                "Codes/Model/",
-                "Codes/ModelView/",
-            }, Array.Empty<string>(), CodeOptimization.Debug);
-        }
-        
-        
-        [MenuItem("Tools/Build/BuildLogic _F8")]
-        public static void BuildLogic()
-        {
-            string[] logicFiles = Directory.GetFiles(Define.BuildOutputDir, "Logic_*");
-            foreach (string file in logicFiles)
-            {
-                File.Delete(file);
+                AssetDatabase.Refresh();
             }
             
-            int random = RandomHelper.RandomNumber(100000000, 999999999);
-            string logicFile = $"Logic_{random}";
-            
-            BuildAssemblieEditor.BuildMuteAssembly(logicFile, new []
+            if (GUILayout.Button("Compile Data"))
             {
-                "Codes/Hotfix/",
-                "Codes/HotfixView/",
-            }, new[]{Path.Combine(Define.BuildOutputDir, "Data.dll")}, CodeOptimization.Debug);
+                List<string> codePath = new List<string>()
+                {
+                    "Codes/Client/Model/",
+                    "Codes/Client/ModelView/",
+                    "Codes/Share/Model/",
+                };
+
+                if (this.withServerCode)
+                {
+                    codePath.AddRange(new List<string>()
+                    {
+                        "Codes/Server/Model/",
+                    });
+                }
+                
+                Compile("Data", codePath.ToArray(), Array.Empty<string>(), codeOptimization);
+            }
+            
+            if (GUILayout.Button("Compile Logic"))
+            {
+                string[] logicFiles = Directory.GetFiles(Define.BuildOutputDir, "Logic_*");
+                foreach (string file in logicFiles)
+                {
+                    File.Delete(file);
+                }
+            
+                int random = RandomHelper.RandomNumber(100000000, 999999999);
+                string logicFile = $"Logic_{random}";
+                
+                List<string> codePath = new List<string>()
+                {
+                    "Codes/Client/Hotfix/",
+                    "Codes/Client/HotfixView/",
+                    "Codes/Share/Hotfix/",
+                };
+
+                if (this.withServerCode)
+                {
+                    codePath.AddRange(new List<string>()
+                    {
+                        "Codes/Server/Hotfix/",
+                    });
+                }
+                
+                Compile(logicFile, codePath.ToArray(), new[]{Path.Combine(Define.BuildOutputDir, "Data.dll")}, codeOptimization);
+            }
         }
 
-        private static void BuildMuteAssembly(string assemblyName, string[] CodeDirectorys, string[] additionalReferences, CodeOptimization codeOptimization)
+        private static void Compile(string assemblyName, string[] CodeDirectorys, string[] additionalReferences, CodeOptimization codeOptimization)
         {
             if (!Directory.Exists(Define.BuildOutputDir))
             {

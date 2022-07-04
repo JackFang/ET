@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.ThirdParty", "Unity.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Mono", "Unity.Mono.csproj", "{daf4b4ae-1e17-8524-7608-d97079524b4d}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Editor", "Unity.Editor.csproj", "{5e9a8d27-f62a-3cce-523b-06233d420565}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.HotfixView", "Unity.HotfixView.csproj", "{71cc2bbf-7bce-ea4a-1e1d-e50fb83c8982}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Editor", "Unity.Editor.csproj", "{5e9a8d27-f62a-3cce-523b-06233d420565}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Model", "Unity.Model.csproj", "{e54d302e-88f8-3960-9eb8-4d54ddf33ff5}"
 EndProject
@@ -30,10 +30,10 @@ Global
 		{f4a75b88-11e2-7273-6296-d7784b3f0854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{daf4b4ae-1e17-8524-7608-d97079524b4d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{daf4b4ae-1e17-8524-7608-d97079524b4d}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5e9a8d27-f62a-3cce-523b-06233d420565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5e9a8d27-f62a-3cce-523b-06233d420565}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71cc2bbf-7bce-ea4a-1e1d-e50fb83c8982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{71cc2bbf-7bce-ea4a-1e1d-e50fb83c8982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5e9a8d27-f62a-3cce-523b-06233d420565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5e9a8d27-f62a-3cce-523b-06233d420565}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{e54d302e-88f8-3960-9eb8-4d54ddf33ff5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{e54d302e-88f8-3960-9eb8-4d54ddf33ff5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{acc430ca-7055-3d8d-690e-2b46ed39fbc8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
