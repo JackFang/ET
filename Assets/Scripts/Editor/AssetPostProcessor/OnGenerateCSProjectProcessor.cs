@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using System.Xml;
@@ -11,92 +12,48 @@ namespace ET
     {
         public static string OnGeneratedCSProject(string path, string content)
         {
-            if (path.EndsWith("Client.Hotfix.csproj"))
+            if (path.EndsWith("Unity.Hotfix.csproj"))
             {
-                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Client\\Hotfix\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Scripts\\Client\\Hotfix\\Client.Hotfix.asmdef\" />", string.Empty);
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Hotfix\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Hotfix\\Unity.Hotfix.asmdef\" />", string.Empty);
             }
             
-            if (path.EndsWith("Client.HotfixView.csproj"))
+            if (path.EndsWith("Unity.HotfixView.csproj"))
             {
-                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Client\\HotfixView\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Scripts\\Client\\HotfixView\\Client.HotfixView.asmdef\" />", string.Empty);
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\HotfixView\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\HotfixView\\Unity.HotfixView.asmdef\" />", string.Empty);
             }
             
-            if (path.EndsWith("Client.Model.csproj"))
+            if (path.EndsWith("Unity.Model.csproj"))
             {
-                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Client\\Model\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Scripts\\Client\\Model\\Client.Model.asmdef\" />", string.Empty);
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Model\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\Model\\Unity.Model.asmdef\" />", string.Empty);
             }
             
-            if (path.EndsWith("Client.ModelView.csproj"))
+            if (path.EndsWith("Unity.ModelView.csproj"))
             {
-                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Client\\ModelView\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Scripts\\Client\\ModelView\\Client.ModelView.asmdef\" />", string.Empty);
+                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\ModelView\\Empty.cs\" />", string.Empty);
+                content =  content.Replace("<None Include=\"Assets\\Scripts\\ModelView\\Unity.ModelView.asmdef\" />", string.Empty);
             }
             
-            if (path.EndsWith("Server.Hotfix.csproj"))
+            if (path.EndsWith("Unity.Hotfix.csproj"))
             {
-                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Server\\Hotfix\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Scripts\\Server\\Hotfix\\Server.Hotfix.asmdef\" />", string.Empty);
-            }
-            
-            if (path.EndsWith("Server.Model.csproj"))
-            {
-                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Server\\Model\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Scripts\\Server\\Model\\Server.Model.asmdef\" />", string.Empty);
-            }
-            
-            if (path.EndsWith("Share.Hotfix.csproj"))
-            {
-                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Share\\Hotfix\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Scripts\\Share\\Hotfix\\Share.Hotfix.asmdef\" />", string.Empty);
-            }
-            
-            if (path.EndsWith("Share.Model.csproj"))
-            {
-                content =  content.Replace("<Compile Include=\"Assets\\Scripts\\Share\\Model\\Empty.cs\" />", string.Empty);
-                content =  content.Replace("<None Include=\"Assets\\Scripts\\Share\\Model\\Share.Model.asmdef\" />", string.Empty);
-            }
-            
-            if (path.EndsWith("Client.Hotfix.csproj"))
-            {
-                return GenerateCustomProject(path, content, @"Codes\Client\Hotfix\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\Client\Hotfix\**\*.cs", @"Codes\Share\Hotfix\**\*.cs", @"Codes\Server\Hotfix\**\*.cs");
             }
 
-            if (path.EndsWith("Client.HotfixView.csproj"))
+            if (path.EndsWith("Unity.HotfixView.csproj"))
             {
                 return GenerateCustomProject(path, content, @"Codes\Client\HotfixView\**\*.cs");
             }
 
-            if (path.EndsWith("Client.Model.csproj"))
+            if (path.EndsWith("Unity.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\Client\Model\**\*.cs");
+                return GenerateCustomProject(path, content, @"Codes\Client\Model\**\*.cs", @"Codes\Share\Model\**\*.cs", @"Codes\Server\Model\**\*.cs");
             }
 
-            if (path.EndsWith("Client.ModelView.csproj"))
+            if (path.EndsWith("Unity.ModelView.csproj"))
             {
                 return GenerateCustomProject(path, content, @"Codes\Client\ModelView\**\*.cs");
-            }
-            
-            if (path.EndsWith("Server.Model.csproj"))
-            {
-                return GenerateCustomProject(path, content, @"Codes\Server\Model\**\*.cs");
-            }
-            
-            if (path.EndsWith("Server.Hotfix.csproj"))
-            {
-                return GenerateCustomProject(path, content, @"Codes\Server\Hotfix\**\*.cs");
-            }
-            
-            if (path.EndsWith("Share.Model.csproj"))
-            {
-                return GenerateCustomProject(path, content, @"Codes\Share\Model\**\*.cs");
-            }
-            
-            if (path.EndsWith("Share.Hotfix.csproj"))
-            {
-                return GenerateCustomProject(path, content, @"Codes\\Share\Hotfix\**\*.cs");
             }
             return content;
         }

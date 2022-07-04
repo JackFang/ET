@@ -1,11 +1,10 @@
 {
-    "name": "Client.Model",
+    "name": "Unity.Model",
     "rootNamespace": "ET.Client",
     "references": [
         "Unity.ThirdParty",
         "Unity.Mono",
-        "Unity.Core",
-        "Share.Model"
+        "Unity.Core"
     ],
     "includePlatforms": [
         "Editor"

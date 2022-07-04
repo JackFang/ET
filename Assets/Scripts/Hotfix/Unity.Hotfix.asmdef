@@ -1,10 +1,11 @@
 {
-    "name": "Share.Hotfix",
+    "name": "Unity.Hotfix",
     "rootNamespace": "ET",
     "references": [
         "Unity.ThirdParty",
+        "Unity.Mono",
         "Unity.Core",
-        "Share.Model"
+        "Unity.Model"
     ],
     "includePlatforms": [
         "Editor"

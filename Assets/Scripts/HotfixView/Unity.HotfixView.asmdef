@@ -1,13 +1,13 @@
 {
-    "name": "Client.Hotfix",
+    "name": "Unity.HotfixView",
     "rootNamespace": "ET.Client",
     "references": [
-        "Client.Model",
-        "Unity.ThirdParty",
         "Unity.Mono",
+        "Unity.ThirdParty",
         "Unity.Core",
-        "Share.Model",
-        "Share.Hotfix"
+        "Unity.Model",
+        "Unity.Hotfix",
+        "Unity.ModelView"
     ],
     "includePlatforms": [
         "Editor"
