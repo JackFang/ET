@@ -5,6 +5,8 @@
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <Nullable>enable</Nullable>
         <LangVersion>10</LangVersion>
+        <AssemblyName>Analyzer</AssemblyName>
+        <RootNamespace>ET</RootNamespace>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -19,6 +21,12 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.1" PrivateAssets="all" />
         <PackageReference Update="NETStandard.Library" PrivateAssets="all" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Include="..\Codes\Analyzer\**\*.cs">
+            <Link>Analyzer\%(RecursiveDir)%(FileName)%(Extension)</Link>
+        </Compile>
     </ItemGroup>
 
 </Project>

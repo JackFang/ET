@@ -22,7 +22,7 @@ namespace ET
 			
 			try
 			{	
-				Dictionary<string, Type> types = AssemblyHelper.GetAssemblyTypes(typeof (Game).Assembly, typeof(Unit).Assembly, DllHelper.GetHotfixAssembly());
+				Dictionary<string, Type> types = AssemblyHelper.GetAssemblyTypes(typeof (Game).Assembly, typeof(Unit).Assembly, Server.DllHelper.GetHotfixAssembly());
                     
 				Game.EventSystem.Add(types);
 				

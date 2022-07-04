@@ -38,27 +38,33 @@ namespace ET
             
             if (path.EndsWith("Unity.Hotfix.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\Client\Hotfix\**\*.cs", @"Codes\Share\Hotfix\**\*.cs", @"Codes\Server\Hotfix\**\*.cs");
+                return GenerateCustomProject(path, content, 
+                    @"..\Codes\Client\Hotfix\**\*.cs Client\Hotfix", 
+                    @"..\Codes\Share\Hotfix\**\*.cs Share\Hotfix", 
+                    @"..\Codes\Server\Hotfix\**\*.cs Server\Hotfix");
             }
 
             if (path.EndsWith("Unity.HotfixView.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\Client\HotfixView\**\*.cs");
+                return GenerateCustomProject(path, content, @"..\Codes\Client\HotfixView\**\*.cs Client\HotfixView");
             }
 
             if (path.EndsWith("Unity.Model.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\Client\Model\**\*.cs", @"Codes\Share\Model\**\*.cs", @"Codes\Server\Model\**\*.cs");
+                return GenerateCustomProject(path, content, 
+                    @"..\Codes\Client\Model\**\*.cs Client\Model", 
+                    @"..\Codes\Share\Model\**\*.cs Share\Model", 
+                    @"..\Codes\Server\Model\**\*.cs Server\Model");
             }
 
             if (path.EndsWith("Unity.ModelView.csproj"))
             {
-                return GenerateCustomProject(path, content, @"Codes\Client\ModelView\**\*.cs");
+                return GenerateCustomProject(path, content, @"..\Codes\Client\ModelView\**\*.cs Client\ModelView");
             }
             return content;
         }
 
-        private static string GenerateCustomProject(string path, string content, params string[] codesPath)
+        private static string GenerateCustomProject(string path, string content, params string[] links)
         {
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(content);
@@ -68,18 +74,21 @@ namespace ET
             var rootNode = newDoc.GetElementsByTagName("Project")[0];
 
             XmlElement itemGroup = newDoc.CreateElement("ItemGroup", newDoc.DocumentElement.NamespaceURI);
-            foreach (var s in codesPath)
+            foreach (var s in links)
             {
+                string[] ss = s.Split(' ');
+                string p = ss[0];
+                string linkStr = ss[1];
                 XmlElement compile = newDoc.CreateElement("Compile", newDoc.DocumentElement.NamespaceURI);
-                //XmlElement link = newDoc.CreateElement("Link", newDoc.DocumentElement.NamespaceURI);
-                //link.InnerText = $"{linkStr}\\%(RecursiveDir)%(FileName)%(Extension)";
-                //compile.AppendChild(link);
-                compile.SetAttribute("Include", s);
+                XmlElement link = newDoc.CreateElement("Link", newDoc.DocumentElement.NamespaceURI);
+                link.InnerText = $"{linkStr}\\%(RecursiveDir)%(FileName)%(Extension)";
+                compile.AppendChild(link);
+                compile.SetAttribute("Include", p);
                 itemGroup.AppendChild(compile);
             }
 
             var projectReference = newDoc.CreateElement("ProjectReference", newDoc.DocumentElement.NamespaceURI);
-            projectReference.SetAttribute("Include", @"..\Share\Analyzer\Share.Analyzer.csproj");
+            projectReference.SetAttribute("Include", @"..\DotNet\Analyzer\Share.Analyzer.csproj");
             projectReference.SetAttribute("OutputItemType", @"Analyzer");
             projectReference.SetAttribute("ReferenceOutputAssembly", @"false");
 
