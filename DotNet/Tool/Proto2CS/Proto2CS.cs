@@ -24,8 +24,8 @@ namespace ET
     public static class InnerProto2CS
     {
         private const string protoPath = ".";
-        private const string clientMessagePath = "../Unity/Codes/Model/Generate/Message/";
-        private const string serverMessagePath = "../Apps/Model/Generate/Message/";
+        private const string clientMessagePath = "../Codes/Share/Model/Generate/Message/";
+        private const string serverMessagePath = "../Codes/Share/Model/Generate/Message/";
         private static readonly char[] splitChars = { ' ', '\t' };
         private static readonly List<OpcodeInfo> msgOpcode = new List<OpcodeInfo>();
 
@@ -40,9 +40,6 @@ namespace ET
 
             Proto2CS("ET", "../Proto/OuterMessage.proto", serverMessagePath, "OuterOpcode", OpcodeRangeDefine.OuterMinOpcode);
             GenerateOpcode("ET", "OuterOpcode", serverMessagePath);
-
-            Proto2CS("ET", "../Proto/OuterMessage.proto", clientMessagePath, "OuterOpcode", OpcodeRangeDefine.OuterMinOpcode);
-            GenerateOpcode("ET", "OuterOpcode", clientMessagePath);
         }
 
         public static void Proto2CS(string ns, string protoName, string outputPath, string opcodeClassName, int startOpcode)

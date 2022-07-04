@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Hotfix", "Hotfix\Dot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.App", "App\DotNet.App.csproj", "{A16798CE-F12C-4E7E-BDB4-9E405C4BEFF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNet.Tool", "Tool\DotNet.Tool.csproj", "{F0F63FD9-3399-492F-A1F6-3DC3F01DEB55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -68,5 +70,13 @@ Global
 		{A16798CE-F12C-4E7E-BDB4-9E405C4BEFF5}.Release|Win32.Build.0 = Release|Any CPU
 		{A16798CE-F12C-4E7E-BDB4-9E405C4BEFF5}.Release|x64.ActiveCfg = Release|Any CPU
 		{A16798CE-F12C-4E7E-BDB4-9E405C4BEFF5}.Release|x64.Build.0 = Release|Any CPU
+		{F0F63FD9-3399-492F-A1F6-3DC3F01DEB55}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F0F63FD9-3399-492F-A1F6-3DC3F01DEB55}.Debug|Win32.Build.0 = Debug|Any CPU
+		{F0F63FD9-3399-492F-A1F6-3DC3F01DEB55}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F0F63FD9-3399-492F-A1F6-3DC3F01DEB55}.Debug|x64.Build.0 = Debug|Any CPU
+		{F0F63FD9-3399-492F-A1F6-3DC3F01DEB55}.Release|Win32.ActiveCfg = Release|Any CPU
+		{F0F63FD9-3399-492F-A1F6-3DC3F01DEB55}.Release|Win32.Build.0 = Release|Any CPU
+		{F0F63FD9-3399-492F-A1F6-3DC3F01DEB55}.Release|x64.ActiveCfg = Release|Any CPU
+		{F0F63FD9-3399-492F-A1F6-3DC3F01DEB55}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

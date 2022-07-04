@@ -25,7 +25,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="..\..\Codes\Client\Model\**\*.cs"> 
+    <Compile Include="..\..\Codes\Client\Model\**\*.cs">
       <Link>Client\Model\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Compile>
     <Compile Include="..\..\Codes\Share\Model\**\*.cs">
@@ -39,6 +39,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Core\DotNet.Core.csproj" />
     <ProjectReference Include="..\Analyzer\DotNet.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="..\..\Codes\Share\Model\Core">
+      <Link>Share\Model\Core</Link>
+    </Folder>
   </ItemGroup>
 
 </Project>

@@ -8,13 +8,19 @@ namespace ET.Client
 		{
 			try
 			{
-				CodeLoader.Instance.Update += Game.Update;
-				CodeLoader.Instance.LateUpdate += Game.LateUpdate;
-				CodeLoader.Instance.OnApplicationQuit += Game.Close;
+				CodeLoader.Instance.Update = Game.Update;
+				CodeLoader.Instance.LateUpdate = Game.LateUpdate;
+				CodeLoader.Instance.OnApplicationQuit = Game.Close;
 				
 				Game.EventSystem.Add(CodeLoader.Instance.GetTypes());
 				
-				MongoHelper.Register(Game.EventSystem.GetTypes());
+				ETTask.ExceptionHandler = Log.Error;
+
+				Log.ILog = new UnityLogger();
+
+				Options.Instance = new Options();
+				
+				MongoRegister.Register(Game.EventSystem.GetTypes());
 
 				Game.EventSystem.Publish(Game.Scene, new EventType.AppStart());
 			}

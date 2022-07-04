@@ -29,11 +29,7 @@ namespace ET
 			
 			DontDestroyOnLoad(gameObject);
 
-			ETTask.ExceptionHandler += Log.Error;
-
-			Log.ILog = new UnityLogger();
-
-			Options.Instance = new Options();
+			ETTask.ExceptionHandler = Debug.LogException; 
 
 			CodeLoader.Instance.CodeMode = this.CodeMode;
 		}
